@@ -1,0 +1,99 @@
+@font-face {
+    font-family: light;
+    src: url(./fonts/SuisseIntl-Light.woff2);
+}
+@font-face {
+    font-family: regular;
+    src: url(./fonts/SuisseIntl-Regular.woff2);
+}
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: regular;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+main{
+
+    .section1{
+        height: 100vh;
+        width: 100%;
+        background-color: #dadada;
+        position: relative;
+
+        video{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+
+        .section1-content{
+            height: 100%;
+            width: 100%;
+            position: relative;
+            color: #fff;
+            // background-color: #111;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .cursor{
+                height: 8vw;
+                width: 8vw;
+                background-color: #ff5f38;
+                border-radius: 50%;
+                position: fixed;
+                z-index: 3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: translate(-50%, -50%);
+
+                h5{
+                    font-size: 1vw;
+                    font-weight: 100;
+                    color: #000;
+                }
+            }
+
+            nav{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 3vw 3vw;
+                z-index: 4;
+
+                h3{
+                    font-family: light;
+                    font-size: 1.3vw;
+                    font-weight: 100;
+                }
+
+                h4{
+                    font-family: light;
+                    font-size: 1.3vw;
+                }
+            }
+
+            svg{
+                padding: 3vw;
+                padding-bottom: 6vw;
+                z-index: 4;
+            }
+        }
+    }
+
+    .section2{
+        height: 100vh;
+        width: 100%;
+        background-color: #dadada;
+    }
+}
