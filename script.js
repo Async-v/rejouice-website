@@ -34,11 +34,12 @@ locoScroll()
 function cursorEffect() {
     let section1Content = document.querySelector('.section1-content')
     let cursor = document.querySelector('.cursor')
-
+    
     section1Content.addEventListener('mousemove', function (dets) {
         gsap.to(cursor, {
             x: dets.x,
-            y: dets.y
+            y: dets.y,
+            opacity: 1
         })
     })
 
@@ -50,6 +51,31 @@ function cursorEffect() {
     })
     section1Content.addEventListener('mouseleave', function () {
         gsap.to(cursor, {
+            scale: 0,
+            opacity: 0
+        })
+    })
+
+
+    let section4 = document.querySelector('.section4')
+    let cursor_bl = document.querySelector('.cursor-bl')
+
+    section4.addEventListener('mousemove', function (dets) {
+        gsap.to(cursor_bl, {
+            x: dets.x,
+            y: dets.y,
+            opacity: 1,
+        })
+    })
+
+    section4.addEventListener('mouseenter', function () {
+        gsap.to(cursor_bl, {
+            scale: 1,
+            opacity: 1
+        })
+    })
+    section4.addEventListener('mouseleave', function () {
+        gsap.to(cursor_bl, {
             scale: 0,
             opacity: 0
         })
@@ -72,3 +98,46 @@ function page2Animation() {
     })
 }
 page2Animation()
+
+function sliderAnimation(){
+    var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: true,
+    },
+    speed: 1500,
+    });
+}
+sliderAnimation()
+
+
+let tl = gsap.timeline()
+
+tl.from("#loader h3", {
+    x:100,
+    opacity:0,
+    duration: 1,
+    stagger: 0.1
+})
+
+tl.to("#loader h3", {
+    x:-20,
+    opacity:0,
+    duration: .8,
+    stagger: 0.1
+})
+tl.to("#loader", {
+    opacity:0
+})
+tl.from(".section1-content #Calque_1 .letter", {
+    y:80,
+    opacity:0,
+    duration: .4,
+    stagger: -0.1,
+    delay: -.3
+})
+tl.to("#loader", {
+    display:'none'
+})
